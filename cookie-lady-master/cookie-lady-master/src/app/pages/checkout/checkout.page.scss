@@ -1,0 +1,11 @@
+.stripe-div {
+  margin: 15px 0 0;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-button {
+    border-radius: 8px;
+    width: 90%;
+  }
+}

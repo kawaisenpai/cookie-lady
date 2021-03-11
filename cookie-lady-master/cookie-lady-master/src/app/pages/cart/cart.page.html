@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cartForm">
+    <ng-container *ngIf="cartProducts.length > 0">
+      <h5 class="item-title">Your items</h5>
+      <ion-row *ngFor="let product of cartProducts">
+        <ion-col size="12">
+          <p class="p-title">{{product.title}}</p>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item lines="full">
+            <ion-badge slot="start" color="dark"
+              >{{product.selectedAmount}}</ion-badge
+            >
+            <ion-list>
+              <ion-label
+                >RM {{product.price}} X {{product.selectedAmount}}
+              </ion-label>
+              <ion-label color="danger" (click)="removeProduct(product.id)"
+                >Remove this item</ion-label
+              >
+            </ion-list>
+            <ion-badge slot="end" color="dark"
+              >RM {{calculatePrice(product)}}</ion-badge
+            >
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item style="margin-top: 20px">
+        <ion-list>
+          <ion-label>Address</ion-label>
+          <ion-textarea
+            placeholder="Your address"
+            formControlName="address"
+          ></ion-textarea>
+        </ion-list>
+      </ion-item>
+      <ion-item style="margin-top: 5px">
+        <ion-list>
+          <ion-label>Notes</ion-label>
+          <ion-input
+            placeholder="Notes for cookie lady"
+            formControlName="notes"
+          ></ion-input>
+        </ion-list>
+      </ion-item>
+    </ng-container>
+  </form>
+  <ng-container style="height: 100%">
+    <div *ngIf="cartProducts.length == 0" class="flex-center">
+      <h6>Add items to start purchasing</h6>
+    </div>
+  </ng-container>
+</ion-content>
+<ion-footer *ngIf="cartProducts.length > 0">
+  <ion-button (click)="checkOut()" size="expand"
+    >Proceed to checkout RM {{getTotal()}}
+  </ion-button>
+</ion-footer>

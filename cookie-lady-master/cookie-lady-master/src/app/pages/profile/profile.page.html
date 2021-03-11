@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm">
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        readonly
+        placeholder="Email"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label position="stacked">First Name</ion-label>
+      <ion-input formControlName="fname" placeholder="First name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-label position="stacked">Last Name</ion-label>
+      <ion-input formControlName="lname" placeholder="Last name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="location"></ion-icon>
+      <ion-label position="stacked">Address</ion-label>
+      <ion-textarea
+        formControlName="address"
+        placeholder="Address"
+      ></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-label position="stacked">Mobile</ion-label>
+      <ion-input
+        formControlName="mobile"
+        readonly
+        placeholder="Mobile"
+      ></ion-input>
+    </ion-item>
+  </form>
+  <div class="gradient-btn">
+    <ion-button (click)="updateUser()">Update </ion-button>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="gradient-btn">
+    <ion-button color="danger" (click)="logOut()">Log Out</ion-button>
+  </div>
+</ion-footer>

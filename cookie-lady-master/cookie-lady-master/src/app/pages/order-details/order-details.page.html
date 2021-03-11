@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Order details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="loaded">
+    <ion-item lines="none">
+      <ion-list>
+        <ion-label>Order Id : {{order.id}}</ion-label>
+        <ion-label>Status : {{order.status}}</ion-label>
+        <ion-label>Payment Id : {{order.paymentId}}</ion-label>
+        <ion-label
+          >Ordered Date : {{getFormattedTime(order.orderDate)}}</ion-label
+        >
+        <ion-label>Notes : {{order.notes}}</ion-label>
+        <ion-label>Address : {{order.orderAddress}}</ion-label>
+      </ion-list>
+    </ion-item>
+    <ion-item *ngFor=" let product of order.products">
+      <ion-avatar slot="start">
+        <ion-img [src]="product.productDetails.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-list>
+        <ion-label> {{product.productDetails.title}} </ion-label>
+        <ion-label
+          >RM {{product.productDetails.price}} X {{product.amount}}</ion-label
+        >
+      </ion-list>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Total amount</ion-label>
+      <ion-badge color="dark" slot="end">RM {{order.totalPrice}} </ion-badge>
+    </ion-item>
+  </ion-card>
+</ion-content>

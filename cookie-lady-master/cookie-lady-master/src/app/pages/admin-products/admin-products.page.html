@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Manage Products </ion-title>
+    <ion-icon
+      routerLink="/add-products"
+      slot="end"
+      class="toolbar-icon"
+      name="add-circle-outline"
+    ></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card
+    (click)="productClicked(product.id)"
+    *ngFor="let product of products"
+  >
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <ion-img [src]="product.imageUrl"></ion-img>
+      </ion-avatar>
+      <ion-list>
+        <ion-text> {{product.title}} </ion-text><br />
+        <ion-text>RM {{product.price}} </ion-text>
+      </ion-list>
+    </ion-item>
+  </ion-card>
+</ion-content>

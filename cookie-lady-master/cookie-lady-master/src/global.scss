@@ -1,0 +1,105 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-tab-bar {
+  --background: #ffe9ec;
+  background: #ffe9ec;
+}
+ion-tab-button {
+  --color: #494949;
+  --color-selected: #fd8495;
+}
+
+.full-flex {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.flex-item {
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+}
+.flex-input {
+  --width: 100%;
+  --padding-left: 15px;
+  --padding: 10px;
+  --padding-start: 10px;
+  --height: 50px;
+  height: 50px;
+  border-radius: 10px;
+  --background: #f0f0f0;
+  font-size: 14px;
+}
+.flex-btn {
+  width: 90%;
+  font-weight: 600;
+  --border-radius: 20px;
+}
+
+ion-input {
+  --padding-start: 10px;
+  padding: 10px;
+  --padding-end: 12px;
+}
+form {
+  width: 100%;
+}
+
+.gradient-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+
+  ion-button {
+    --border-radius: 20px;
+    width: 80%;
+    height: 42px;
+    color: black;
+    --background: linear-gradient(to right, #ffe9ec, #ffbcc5);
+    --background-focused: linear-gradient(to right, #faaeb8, #f87889);
+    --background-activated: linear-gradient(to right, #faaeb8, #f87889);
+  }
+}
+.error-message {
+  color: var(--ion-color-danger) !important;
+  padding-left: 30px;
+  font-size: 12px;
+  margin: 2px 0 10px;
+  font-weight: 700;
+}
+// .loading-ctrl {
+//   --spinner-color: black;
+// }

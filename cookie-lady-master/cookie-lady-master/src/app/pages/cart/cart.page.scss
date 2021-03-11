@@ -1,0 +1,22 @@
+.p-title {
+  padding: 0 16px;
+  margin: 10px 0 -5px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.item-title {
+  padding: 0 16px;
+}
+ion-list {
+  width: 100%;
+}
+ion-footer {
+  padding: 5px 15px;
+  ion-button {
+    width: 100%;
+  }
+}

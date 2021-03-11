@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of products">
+    <ion-avatar>
+      <ion-img [src]="item.imageUrl"></ion-img>
+    </ion-avatar>
+    <div class="card-details">
+      <h5>{{item.title}}</h5>
+      <h6>Price : RM {{item.price}}</h6>
+    </div>
+    <ion-row class="add-row">
+      <ion-col offset="3" size="2"
+        ><ion-button (click)="removeProduct(item)"
+          ><ion-icon name="remove-outline"></ion-icon></ion-button
+      ></ion-col>
+      <ion-col size="2">{{item.amount}}</ion-col>
+      <ion-col size="2"
+        ><ion-button (click)="addProduct(item)"
+          ><ion-icon name="add-outline"></ion-icon></ion-button
+      ></ion-col>
+    </ion-row>
+    <div class="gradient-btn">
+      <ion-button (click)="addToCart(item)" *ngIf="item.amount > 0"
+        >Add {{item.amount}} to Cart</ion-button
+      >
+    </div>
+  </ion-card>
+</ion-content>

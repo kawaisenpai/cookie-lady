@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Checkout</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="cardForm">
+    <ion-card>
+      <ion-avatar style="margin: 10px auto">
+        <ion-img src="assets/images/stripe.png"></ion-img
+      ></ion-avatar>
+      <ion-item>
+        <ion-icon name="mail" slot="start"> </ion-icon>
+        <ion-input
+          readonly
+          formControlName="email"
+          placeholder="Email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" slot="start"> </ion-icon>
+        <ion-input
+          formControlName="cardName"
+          placeholder="Name on card"
+        ></ion-input>
+      </ion-item>
+      <ion-item style="margin-top: 15px">
+        <ion-icon name="card" slot="start"> </ion-icon>
+        <ion-input
+          formControlName="cardNumber"
+          placeholder="Your card number"
+        ></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item style="margin-top: 15px">
+            <ion-icon name="calendar" slot="start"> </ion-icon>
+            <ion-input
+              max="12"
+              #month
+              type="text"
+              maxlength="2"
+              formControlName="month"
+              placeholder="MM"
+            ></ion-input
+            >/&nbsp;
+            <ion-input
+              maxlength="2"
+              type="text"
+              #year
+              formControlName="year"
+              placeholder="YY"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item style="margin-top: 15px">
+            <ion-icon name="lock-closed" slot="start"> </ion-icon>
+            <ion-input
+              maxlength="3"
+              type="text"
+              formControlName="cvc"
+              placeholder="CVC"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item lines="none">
+        <ion-label>Payment amount</ion-label>
+        <ion-badge color="success"> MYR {{paymentAmount}}</ion-badge>
+      </ion-item>
+      <div class="stripe-div">
+        <ion-button (click)="payWithStripe()" color="success">
+          Pay with stripe
+        </ion-button>
+      </div>
+    </ion-card>
+  </form>
+</ion-content>

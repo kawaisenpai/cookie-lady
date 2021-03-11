@@ -1,0 +1,7 @@
+{
+  "name": "cookie-ladyy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

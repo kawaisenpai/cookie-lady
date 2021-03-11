@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="full-flex">
+    <h2 style="margin-top: 0">Log In to continue</h2>
+
+    <form [formGroup]="loginForm" (submit)="handleLoginUser()">
+      <div class="flex-item" style="margin-top: 7vh">
+        <ion-input
+          formControlName="email"
+          placeholder="Email"
+          class="flex-input"
+        ></ion-input>
+      </div>
+      <div
+        *ngIf="loginForm.get('email').invalid && (loginForm.get('email').dirty || loginForm.get('email').touched)"
+      >
+        <p class="error-message">Enter a valid email.</p>
+      </div>
+      <div class="flex-item">
+        <ion-input
+          formControlName="password"
+          placeholder="Password"
+          type="password"
+          class="flex-input"
+        ></ion-input>
+      </div>
+      <div class="gradient-btn" style="margin-top: 5vh">
+        <ion-button style="--background: white" type="submit" class=""
+          >Log In</ion-button
+        >
+      </div>
+    </form>
+    <p routerLink="/forgot-password" style="outline: none; margin-top: 2vh">
+      Forgot Password?
+    </p>
+    <p style="margin-top: 2vh">
+      New to here?<span routerLink="/signup" style="outline: none">
+        <strong> Signup Here</strong>
+      </span>
+    </p>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+ion-item {
+  margin-top: 10px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 10%;
+  .image-preview {
+    width: 250px;
+    height: 250px;
+    --border-radius: 5px;
+  }
+  ion-button {
+    height: 35px;
+    margin-top: 15px;
+  }
+}

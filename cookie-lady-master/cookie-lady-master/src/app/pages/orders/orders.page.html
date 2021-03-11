@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let order of myOrders">
+    <ion-item (click)="orderClick(order)">
+      <ion-badge slot="start">{{order.status}}</ion-badge>
+
+      <ion-list style="width: 100%">
+        <p>Order Id : {{order.id}}</p>
+        <p>{{totalItems(order.products)}} pieces - RM {{order.totalPrice}}</p>
+        <p>{{getFormattedTime(order.orderDate)}}</p>
+      </ion-list>
+    </ion-item>
+  </ion-card>
+</ion-content>
